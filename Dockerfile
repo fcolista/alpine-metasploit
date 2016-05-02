@@ -23,7 +23,6 @@ RUN chmod +x /usr/local/bin/start.sh && \
 	git \
 	sqlite \
 	zlib-dev \
-	ruby-webrobots \
         ruby-bundler \
 	ruby-io-console \
 	ruby-nokogiri \
@@ -43,8 +42,6 @@ RUN chmod +x /usr/local/bin/start.sh && \
 	ruby-rack-cache \
 	ruby-rack-openid \
 	ruby-rack-ssl \
-	ruby-rack14 \
-	ruby-rack-protection \
 	ruby-actionpack-action_caching4.2 \
 	ruby-actionpack4.2 \
 	ruby-actionpack-xml_parser4.2 \
@@ -54,7 +51,6 @@ RUN chmod +x /usr/local/bin/start.sh && \
 	ruby-activemodel4.2 \
 	ruby-arel \
 	ruby-activerecord4.2 \
-	ruby-diff-lcs \
 	ruby-coderay \
 	ruby-thor \
 	ruby-railties4.2 \
@@ -68,7 +64,6 @@ RUN chmod +x /usr/local/bin/start.sh && \
 	ruby-json \
 	ruby-pg \
 	ruby-redcarpet \
-	ruby-pry \
 	nmap \
         ncurses \
 	ncurses-dev && \
