@@ -1,10 +1,10 @@
-FROM alpine:3.3
+FROM alpine:latest
 MAINTAINER Francesco Colista <fcolista@alpinelinux.org>
 COPY ./start.sh /usr/local/bin/start.sh
 ENV PATH=$PATH:/usr/share/metasploit-framework 
 ENV NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 RUN chmod +x /usr/local/bin/start.sh && \
-    echo "http://nl.alpinelinux.org/alpine/v3.3/community" >> /etc/apk/repositories && \
+    echo "http://nl.alpinelinux.org/alpine/v3.4/community" >> /etc/apk/repositories && \
     echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
     apk update && \
 	apk add \
