@@ -26,7 +26,7 @@ sh -c "echo 'production:
 else
 	echo "USAGE:"
 	echo "	1. Setup a database:"
-	echo "	   docker run -d --name=postgres postgres"
+	echo "	   docker run -d --name postgres -e POSTGRES_PASSWORD=postgres postgres:15.1-alpine"
 	echo "	2. Link containers:"
 	echo "	   docker run -it --link postgres:db fcolista/alpine-metasploit"
 	echo ""

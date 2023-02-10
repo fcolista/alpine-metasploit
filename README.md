@@ -9,7 +9,7 @@ alpine-metasploit works out-of-the-box with official Postgresql docker image.
 You can start the alpine-metasploit with PostgreSQL support with the commands:
 
 ```
-docker run -d --name postgres postgres && docker start postgres
+docker run -d --name postgres -e POSTGRES_PASSWORD=postgres postgres:15.1-alpine && docker start postgres
 docker run -it --link postgres:db fcolista/alpine-metasploit
 ```
 

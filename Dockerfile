@@ -1,9 +1,9 @@
-FROM alpine:3.13.2
+FROM alpine:3.17
 MAINTAINER Francesco Colista <fcolista@alpinelinux.org>
 COPY ./start.sh /usr/local/bin/start.sh
 ENV PATH=$PATH:/usr/share/metasploit-framework
 RUN chmod +x /usr/local/bin/start.sh && \
-	echo "http://dl-cdn.alpinelinux.org/alpine/v3.13/community" >> /etc/apk/repositories && \
+	echo "http://dl-cdn.alpinelinux.org/alpine/v3.17/community" >> /etc/apk/repositories && \
         apk add -U --no-cache \
         build-base \
         ruby \
@@ -43,7 +43,7 @@ RUN apk del \
 	build-base \
 	ruby-dev \
 	libffi-dev\
-	libressl-dev \
+	openssl-dev \
 	readline-dev \
 	sqlite-dev \
 	postgresql-dev \
