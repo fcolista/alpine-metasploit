@@ -2,7 +2,7 @@
 
 cd /usr/share/metasploit-framework
 git config --global user.name "msf"
-git config --global email.name "msf@localhost"
+git config --global user.email "msf@localhost"
 /usr/share/metasploit-framework/msfupdate
 
 MSFUSER=${MSFUSER:-postgres}

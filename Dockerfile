@@ -1,7 +1,7 @@
-FROM alpine:3.19
+FROM alpine:3.20
 MAINTAINER Francesco Colista <fcolista@alpinelinux.org>
 COPY ./start.sh /usr/local/bin/start.sh
-ARG ALPINE_VER=3.19
+ARG ALPINE_VER=3.20
 ENV PATH=$PATH:/usr/share/metasploit-framework
 RUN chmod +x /usr/local/bin/start.sh && \
 	echo "http://dl-cdn.alpinelinux.org/alpine/v${ALPINE_VER}/community" >> /etc/apk/repositories && \
