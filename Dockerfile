@@ -1,7 +1,7 @@
-FROM alpine:3.21
-MAINTAINER Francesco Colista <fcolista@alpinelinux.org>
+FROM alpine:3.22
+LABEL org.opencontainers.image.authors="francesco.colista@gmail.com"
 COPY ./start.sh /usr/local/bin/start.sh
-ARG ALPINE_VER=3.21
+ARG ALPINE_VER=3.22
 ENV PATH=$PATH:/usr/share/metasploit-framework
 RUN chmod +x /usr/local/bin/start.sh && \
 	echo "http://dl-cdn.alpinelinux.org/alpine/v${ALPINE_VER}/community" >> /etc/apk/repositories && \
@@ -10,7 +10,6 @@ RUN chmod +x /usr/local/bin/start.sh && \
         ruby \
         ruby-bigdecimal \
         ruby-bundler \
-        ruby-io-console \
         ruby-webrick \
         ruby-dev \
         libffi-dev\
