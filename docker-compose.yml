@@ -1,5 +1,40 @@
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  postgres:
+    image: postgres:16-alpine
+    container_name: msf-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: msf
+      POSTGRES_USER: postgres
+      POSTGRES_DB: msf
+    volumes: ['./pgdata:/var/lib/postgresql/data']
+    networks: [msfnet]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  msf:
+    build: .
+    container_name: msf
+    restart: unless-stopped
+    environment:
+      MSF_DATABASE_HOST: postgres
+      MSF_USERNAME: msf
+      MSF_PASSWORD: msf
+      MSF_DATABASE: msf
+      MSF_UPDATE: "false"
+      POSTGRES_PASSWORD: msf
+    volumes:
+      - ./msfdata:/usr/share/metasploit-framework/.msf4:delegated
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks: [msfnet]
+    ports: ["55552:55552", "55553:55553"]
+
+networks:
+  msfnet:
+    driver: bridge
+
