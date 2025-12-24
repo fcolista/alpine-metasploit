@@ -2,6 +2,8 @@
 
 Lightweight and secure Docker image to run Metasploit Framework on Alpine Linux 3.23 with optional PostgreSQL support.
 
+Available tags:  https://hub.docker.com/repository/docker/fcolista/alpine-metasploit/tags
+
 ## Key features:
 
 - Multi-stage build (~400MB compressed)
@@ -105,10 +107,6 @@ git clone https://github.com/fcolista/alpine-metasploit
 cd alpine-metasploit
 docker build -t my-msf:local .
 ```
-
-Available tags: 
-- `fcolista/alpine-metasploit:3.22`
-- `fcolista/alpine-metasploit:3.23`
 
 🔒 Security
 - Runs as msf user (non-root)
