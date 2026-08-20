@@ -1,6 +1,6 @@
 # alpine-metasploit
 
-Lightweight and secure Docker image to run Metasploit Framework on Alpine Linux 3.23 with optional PostgreSQL support.
+Lightweight and secure Docker image to run Metasploit Framework on Alpine Linux 3.24 with optional PostgreSQL support.
 
 ## Key features:
 
@@ -61,7 +61,7 @@ docker run -it \
   -e MSF_USERNAME=msf \
   -e MSF_PASSWORD=msf \
   -v $(pwd)/msfdata:/msfdata \
-  fcolista/alpine-metasploit:3.23
+  fcolista/alpine-metasploit:3.24
 ```
 
 | Variable          | Default  | Description               |
@@ -109,6 +109,7 @@ docker build -t my-msf:local .
 Available tags: 
 - `fcolista/alpine-metasploit:3.22`
 - `fcolista/alpine-metasploit:3.23`
+- `fcolista/alpine-metasploit:3.24`
 
 🔒 Security
 - Runs as msf user (non-root)
