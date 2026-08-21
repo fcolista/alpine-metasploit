@@ -6,7 +6,7 @@ Lightweight and secure Docker image to run Metasploit Framework on Alpine Linux 
 
 - Multi-stage build (~400MB compressed)
 - Non-root msf user (UID 1000)
-- Ruby + Bundler pinned (2.5.17)
+- Ruby + Bundler pinned (4.0.19)
 - Shallow clone of official Rapid7 repo
 - Separate data persistence (workspaces, DB)
 - POSIX-compliant and configurable start.sh
@@ -61,7 +61,7 @@ docker run -it \
   -e MSF_USERNAME=msf \
   -e MSF_PASSWORD=msf \
   -v $(pwd)/msfdata:/msfdata \
-  fcolista/alpine-metasploit:3.24
+  fcolista/alpine-metasploit:alpine-3.24
 ```
 
 | Variable          | Default  | Description               |
@@ -107,9 +107,9 @@ docker build -t my-msf:local .
 ```
 
 Available tags: 
-- `fcolista/alpine-metasploit:3.22`
-- `fcolista/alpine-metasploit:3.23`
-- `fcolista/alpine-metasploit:3.24`
+- `fcolista/alpine-metasploit:alpine-3.22`
+- `fcolista/alpine-metasploit:alpine-3.23`
+- `fcolista/alpine-metasploit:alpine-3.24`
 
 🔒 Security
 - Runs as msf user (non-root)
